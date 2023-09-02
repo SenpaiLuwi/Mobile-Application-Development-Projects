@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#352F44"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:id="@+id/LoginScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="@string/Login_Screen"
+        android:textColor="#B9B4C7"
+        android:textSize="50sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/TxtUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/User_Name"
+        android:textColor="#B9B4C7"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#B9B4C7"
+        android:ems="10"
+        android:hint="@string/User_Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#B9B4C7"
+        android:textColorHint="#B9B4C7" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/TxtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Password"
+        android:textColor="#B9B4C7"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#B9B4C7"
+        android:ems="10"
+        android:hint="@string/Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="#B9B4C7"
+        android:textColorHint="#B9B4C7"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="#836096"
+        android:elevation="50dp"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/LoginBtn"
+        android:textColor="#212121"
+        android:textSize="24sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Name"
+        android:textColor="#B9B4C7"
+        android:textSize="20sp" />
+
+</LinearLayout>
