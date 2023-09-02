@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ABC4AA"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Name"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/Title"
+        android:textColor="#263A29"
+        android:textSize="24sp" />
+
+    <Space
+        android:id="@+id/Space1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/LastNameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/LastName"
+        android:textColor="#263A29"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/LastNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Last Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#263A29"
+        android:textColorHint="#263A29" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/FirstNameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/FirstName"
+        android:textColor="#263A29"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/FirstNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="First Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#263A29"
+        android:textColorHint="#263A29" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/MINameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/MI"
+        android:textColor="#263A29"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/MINameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Middle Initial"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#263A29"
+        android:textColorHint="#263A29" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/SendBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:background="#183A1D"
+        android:textColor="#F3DEBA"
+        android:text="@string/Send" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/TextArea"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:background="#334F870E"
+        android:gravity="center|top"
+        android:hint="The Text Will Appear Here"
+        android:textColor="#263A29"
+        android:textColorHint="#263A29"
+        android:textSize="17sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp">
+
+        <Button
+            android:id="@+id/RedBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:background="#183A1D"
+            android:gravity="center"
+            android:text="@string/RedColor"
+            android:textColor="#F3DEBA" />
+
+        <Button
+            android:id="@+id/GreenBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#183A1D"
+            android:gravity="center"
+            android:text="@string/GreenColor"
+            android:textColor="#F3DEBA" />
+
+        <Button
+            android:id="@+id/OrangeBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="#183A1D"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:text="@string/OrangeColor"
+            android:textColor="#F3DEBA" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp">
+
+        <Button
+            android:id="@+id/SizeOne"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:background="#183A1D"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:text="@string/Size34"
+            android:textColor="#F3DEBA"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/SizeTwo"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#183A1D"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:text="@string/Size24"
+            android:textColor="#F3DEBA"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/SizeThree"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="#183A1D"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:text="@string/Size20"
+            android:textColor="#F3DEBA"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:textColor="#F3DEBA">
+
+        <Button
+            android:id="@+id/WelcomeBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/Welcome"
+            android:textColor="#183A1D" />
+
+        <Button
+            android:id="@+id/CongratsBtn"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/Congratulations"
+            android:textColor="#183A1D"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/NiceBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/HaveANiceDay"
+            android:textColor="#183A1D"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
