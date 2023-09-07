@@ -33,7 +33,7 @@
         android:layout_height="300dp"
         android:layout_gravity="center"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/gordon" />
+        app:srcCompat="@drawable/android" />
 
     <Space
         android:layout_width="match_parent"
@@ -44,7 +44,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Release Date"
         android:shadowColor="#000000"
         android:textColor="#FFB84C"
         android:textSize="20sp" />

@@ -7,7 +7,7 @@ import com.example.act3_radiobutton.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val defaultCharacterInfo = CharacterInfo(
-        R.drawable.gordon,
+        R.drawable.android,
         "",
         "",
         "",
