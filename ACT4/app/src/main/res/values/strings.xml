@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Act4</string>
+    <string name="UserInteraction">User Interaction</string>
+    <string name="ToastMessage">Toast Message</string>
+    <string name="pink">Pink</string>
+    <string name="yellow">Yellow</string>
+    <string name="cyan">Cyan</string>
+    <string name="White">White</string>
+    <string name="SnackbarMessage">Snackbar Message</string>
+    <string name="QuestionTxt">What tower that collapsed into rubble demolishing a large section of lower Manhattan, 3,000 people were killed, in the 9/11 Sept, 11, 2001 terrorist attacks, including the 19 al Qaeda terrorists. </string>
+    <string name="WarisanMerdekaTower">Warisan Merdeka Tower</string>
+    <string name="WorldTradeCenter">World Trade Center</string>
+    <string name="ArqivaTower">Arqiva Tower</string>
+    <string name="DialogBox">Dialog Box</string>
+    <string name="LightsOnOff">Lights On/Off</string>
+</resources>

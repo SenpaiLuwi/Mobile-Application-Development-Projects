@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Act1_LoginScreen_Ubias</string>
-    <string name="Name">John Louie Ubias | 3BSIT-2</string>
-    <string name="Login_Screen">Login Screen</string>
-    <string name="User_Name">Username</string>
-    <string name="Password">Password</string>
-    <string name="LoginBtn">Login</string>
-</resources>
