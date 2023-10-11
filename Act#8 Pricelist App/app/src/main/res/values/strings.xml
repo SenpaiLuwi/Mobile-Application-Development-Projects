@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Act#8 Pricelist App</string>
+
+    <string name="search">Search</string>
+    <string name="ProdName">Product Name</string>
+    <string name="ProdPrice">Product Price</string>
+    <string name="Save">Save</string>
+</resources>

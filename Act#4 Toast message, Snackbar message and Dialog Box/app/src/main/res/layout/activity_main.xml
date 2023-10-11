@@ -117,24 +117,24 @@
             android:id="@+id/buttonOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ArqivaTower" />
+            android:text="@string/RyanGosling" />
 
         <RadioButton
             android:id="@+id/buttonTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/WorldTradeCenter" />
+            android:text="@string/JohnLouieUbias" />
 
         <RadioButton
             android:id="@+id/buttonThree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/WarisanMerdekaTower" />
+            android:text="@string/LeonardoDicaprio" />
     </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="10dp" />
+        android:layout_height="30dp" />
 
     <TextView
         android:id="@+id/dialogTxt"

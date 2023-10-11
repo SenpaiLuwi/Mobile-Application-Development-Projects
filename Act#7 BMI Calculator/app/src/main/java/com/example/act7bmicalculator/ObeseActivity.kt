@@ -30,9 +30,9 @@ class ObeseActivity : AppCompatActivity() {
         genderView.text = gender
         BMIView.text = String.format("%.2f", bmi)
 
-        if (gender == "Mr") {
+        if (gender == "Sir") {
             imageView.setImageResource(R.drawable.lalaki)
-        } else if (gender == "Ms") {
+        } else if (gender == "Ma'am") {
             imageView.setImageResource(R.drawable.babae)
         }
     }

@@ -1,6 +1,5 @@
 package com.example.act4
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -13,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var isLightOn = false
 
-    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -45,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 if (binding.buttonThree.isChecked) {
                     binding.buttonThree.isChecked = false
                 }
-                "That is the WRONG Answer, It was the seventh tallest freestanding structure and was fourth tallest tower in the European Union"
+                "That is the WRONG Answer, This Guy is NOT HANDSOME"
             }
 
             R.id.buttonTwo -> {
@@ -53,14 +51,14 @@ class MainActivity : AppCompatActivity() {
                 binding.buttonOne.isEnabled = false
                 binding.buttonThree.isChecked = false
                 binding.buttonThree.isEnabled = false
-                "You Are Correct! World Trade Center (WTC) was destroyed during the September 11 terrorist attacks in 2001."
+                "You Are Correct! This Guy IS HANDSOME"
             }
 
             R.id.buttonThree -> {
                 if (binding.buttonOne.isChecked) {
                     binding.buttonOne.isChecked = false
                 }
-                "That is the WRONG Answer, It is the second-tallest structure and building in the world, behind the Burj Khalifa"
+                "That is the WRONG Answer, This Guy is NOT HANDSOME"
             }
 
             else -> {
@@ -81,7 +79,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun showLightDialog() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Attention! What do you want me to do for the Torch?")
+        builder.setTitle("Attention!")
+        builder.setMessage("What do you want me to do for the Torch?")
         builder.setPositiveButton("Turn on the Light") { _, _ ->
             if (!isLightOn) {
                 binding.torchPng.setImageResource(R.drawable.bulbon)

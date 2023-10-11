@@ -36,6 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         adapter = Adapter(list)
         binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = GridLayoutManager(this, 3)
+        binding.recyclerView.layoutManager = GridLayoutManager(this, 1)
     }
 }
