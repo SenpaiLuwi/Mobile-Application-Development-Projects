@@ -87,20 +87,34 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDeleteDialog(position: Int) {
-        val alertDialogBuilder = AlertDialog.Builder(this)
-        alertDialogBuilder.setMessage("ATTENTION!! Do you want to Delete this Item?")
-            .setPositiveButton("Delete") { _, _ ->
-                productList.removeAt(position)
-                updateListView()
-                saveProductList()
+        var posToDel = 0
+        val productListSize = productList.size
+
+        for (i in 0 until productListSize) {
+            if (listView.getItemAtPosition(position).toString() == productList[i]) {
+                break
             }
+            posToDel++
+        }
+
+        val alert = AlertDialog.Builder(this)
+        alert.setTitle("Attention!")
+        alert.setMessage("Do you want to delete this item?")
+        alert.setPositiveButton("Delete") { _, _ ->
+            productList.removeAt(posToDel)
+            updateListView()
+            saveProductList()
+        }
+
             .setNegativeButton("Cancel") { dialog, _ ->
                 dialog.dismiss()
             }
 
-        val alertDialog = alertDialogBuilder.create()
+
+        val alertDialog = alert.create()
         alertDialog.show()
     }
+
 
     private fun saveProductList() {
         val fileOutputStream: FileOutputStream
