@@ -54,25 +54,25 @@ class Game : AppCompatActivity() {
                     displayMessage("Please enter your answer.")
                 }
                 else {
-                        userAnswer = userAnswerText.toInt()
-                        pauseTimer()
+                    userAnswer = userAnswerText.toInt()
+                    pauseTimer()
 
-                        if (userAnswer == correctAnswer) {
-                            userScore++
-                            score.text = userScore.toString()
-                            question.text = "You Are Correct"
-                            displayMessage("You Are Correct")
-                        } else {
-                            userLife--
-                            life.text = userLife.toString()
-                            question.text = "You Are Wrong"
-                            displayMessage("You Are Wrong")
-                        }
-
-                        okButtonClicked = true
+                    if (userAnswer == correctAnswer) {
+                        userScore++
+                        score.text = userScore.toString()
+                        question.text = "You Are Correct"
+                        displayMessage("You Are Correct")
+                    } else {
+                        userLife--
+                        life.text = userLife.toString()
+                        question.text = "You Are Wrong"
+                        displayMessage("You Are Wrong")
                     }
+
+                    okButtonClicked = true
                 }
-             else {
+            }
+            else {
                 displayMessage("You have already answered.")
             }
         }
@@ -147,11 +147,21 @@ class Game : AppCompatActivity() {
             override fun onFinish() {
                 timerRunning = false
                 pauseTimer()
-                resetTimer()
                 userLife--
                 life.text = userLife.toString()
-                question.text = "Times Up!"
+                if (userLife <= 0) {
+                    question.text = "Game Over"
+                    Toast.makeText(applicationContext, "Game Over", Toast.LENGTH_SHORT).show()
+                    val intentResult = Intent(this@Game, result::class.java)
+                    intentResult.putExtra("score", userScore)
+                    startActivity(intentResult)
+                    finish()
+                } else {
+                    question.text = "Time's Up!"
+                    resetTimer()
+                }
             }
+
         }.start()
 
         timerRunning = true
