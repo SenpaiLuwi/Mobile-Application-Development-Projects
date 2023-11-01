@@ -47,7 +47,7 @@
         android:gravity="center"
         android:text="@string/ScoreInt"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="50dp"
         android:textStyle="bold" />
 
     <Space

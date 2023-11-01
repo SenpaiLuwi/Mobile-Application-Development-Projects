@@ -25,11 +25,12 @@ class Game : AppCompatActivity() {
     private var userLife = 3
 
     private lateinit var timer: CountDownTimer
-    private val START_TIMER_IN_MILLIS: Long = 21000
+    private val START_TIMER_IN_MILLIS: Long = 20500
     private var timerRunning = false
     private var timeLeftInMillis = START_TIMER_IN_MILLIS
 
-    private var okButtonClicked = false
+    private var timeOut = false
+    private var okButtonClickable = true
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,13 +48,12 @@ class Game : AppCompatActivity() {
         gameContinue()
 
         ok.setOnClickListener {
-            if (!okButtonClicked) {
+            if (okButtonClickable) {
                 val userAnswerText = answer.text.toString().trim()
 
                 if (userAnswerText.isEmpty()) {
                     displayMessage("Please enter your answer.")
-                }
-                else {
+                } else {
                     userAnswer = userAnswerText.toInt()
                     pauseTimer()
 
@@ -62,43 +62,52 @@ class Game : AppCompatActivity() {
                         score.text = userScore.toString()
                         question.text = "You Are Correct"
                         displayMessage("You Are Correct")
+                        answer.isEnabled = false
                     } else {
                         userLife--
                         life.text = userLife.toString()
                         question.text = "You Are Wrong"
                         displayMessage("You Are Wrong")
+                        answer.isEnabled = false
                     }
 
-                    okButtonClicked = true
+                    okButtonClickable = false
                 }
-            }
-            else {
+            } else {
                 displayMessage("You have already answered.")
             }
         }
 
         next.setOnClickListener {
             val userAnswerText = answer.text.toString().trim()
-            if (userAnswerText.isEmpty()) {
-                displayMessage("Please enter your answer before moving to the next question.")
+            if (userAnswerText.isEmpty() && timeOut) {
+                resetTimer()
             } else {
+                if (userAnswerText.isEmpty()) {
+                    userLife--
+                    life.text = userLife.toString()
+                }
                 answer.text.clear()
                 resetTimer()
-                okButtonClicked = false
+                okButtonClickable = true
+            }
 
-                if (userLife <= 0) {
-                    Toast.makeText(applicationContext, "Game Over", Toast.LENGTH_SHORT).show()
-                    val intentResult = Intent(this, result::class.java)
-                    intentResult.putExtra("score", userScore)
-                    startActivity(intentResult)
-                    finish()
-                } else {
-                    gameContinue()
-                }
+            if (userLife <= 0) {
+                Toast.makeText(applicationContext, "Game Over", Toast.LENGTH_SHORT).show()
+                val intentResult = Intent(this, result::class.java)
+                intentResult.putExtra("score", userScore)
+                startActivity(intentResult)
+                finish()
+            } else {
+                gameContinue()
+                answer.isEnabled = true
+                ok.isClickable = true
+                timeOut = false
             }
         }
 
     }
+
 
     @SuppressLint("SetTextI18n")
     private fun gameContinue() {
@@ -110,7 +119,12 @@ class Game : AppCompatActivity() {
         if (operation == "subtraction") {
             num1 = randomnum.nextInt(100)
             num2 = randomnum.nextInt(num1 + 1)
-        } else {
+        }
+        else if (operation == "multiplication"){
+            num1 = randomnum.nextInt(10)
+            num2 = randomnum.nextInt(10)
+        }
+        else {
             num1 = randomnum.nextInt(100)
             num2 = randomnum.nextInt(100)
         }
@@ -147,6 +161,7 @@ class Game : AppCompatActivity() {
             override fun onFinish() {
                 timerRunning = false
                 pauseTimer()
+                timeOut = true
                 userLife--
                 life.text = userLife.toString()
                 if (userLife <= 0) {
@@ -159,9 +174,10 @@ class Game : AppCompatActivity() {
                 } else {
                     question.text = "Time's Up!"
                     resetTimer()
+                    answer.isEnabled = false
+                    ok.isClickable = false
                 }
             }
-
         }.start()
 
         timerRunning = true
