@@ -36,7 +36,6 @@ class edit : AppCompatActivity() {
         val col2 = i_edel.getStringExtra("prod").toString()
         val col3 = i_edel.getStringExtra("price").toString()
 
-        //txtrecno.text = "ITEM ID: $col1"
         txtrecno.text = col1
         produkto.setText(col2)
         presyo.setText(col3)
@@ -69,101 +68,56 @@ class edit : AppCompatActivity() {
                     statement.bindString(3, recnum)
                     statement.execute()
 
-                    Toast.makeText(applicationContext, "Record Saved Successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Record Saved Successfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     finish()
-                    val intentback = Intent(applicationContext, view::class.java)
+                    val intentback = Intent(applicationContext, MainActivity::class.java)
                     startActivity(intentback)
+                } catch (exception: Exception) {
+                    Toast.makeText(
+                        applicationContext,
+                        "Record Saved Unsuccessfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-                catch (exception: Exception) {
-                    Toast.makeText(applicationContext, "Record Saved Unsuccessfully", Toast.LENGTH_SHORT).show()
-                }
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    "Please Input all the Fields",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-            else {
-                Toast.makeText(applicationContext, "Please Input all the Fields", Toast.LENGTH_SHORT).show()
-            }
-        }
-        else {
-            Toast.makeText(applicationContext, "Please Edit Either the Name or the Price", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(
+                applicationContext,
+                "Please Edit Either the Name or the Price",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
 
     private fun deleterec() {
         try {
-            val recnum = txtrecno.text.toString().toInt()
+            val recnum = txtrecno.text.toString()
             val db = openOrCreateDatabase("dbaseprod", Context.MODE_PRIVATE, null)
 
-            // Delete the record
-            val deleteSql = "DELETE FROM tblproduct WHERE id = ?"
-            val deleteStatement: SQLiteStatement = db.compileStatement(deleteSql)
-            deleteStatement.bindLong(1, recnum.toLong())
-            deleteStatement.execute()
+            val mysql = "delete from tblproduct where id = ?"
+            val statement: SQLiteStatement = db.compileStatement(mysql)
+            statement.bindString(1, recnum)
+            statement.execute()
 
-            // Update the IDs of the remaining records
-            val updateSql = "UPDATE tblproduct SET id = id - 1 WHERE id > ?"
-            val updateStatement: SQLiteStatement = db.compileStatement(updateSql)
-            updateStatement.bindLong(1, recnum.toLong())
-            updateStatement.execute()
-
-            Toast.makeText(applicationContext, "Record Deleted Successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Record Deleted Successfully", Toast.LENGTH_SHORT)
+                .show()
             finish()
-            val intentback = Intent(applicationContext, view::class.java)
+            val intentback = Intent(applicationContext, MainActivity::class.java)
             startActivity(intentback)
         } catch (exception: Exception) {
-            Toast.makeText(applicationContext, "Record Deleted Unsuccessfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Record Deleted Unsuccessfully", Toast.LENGTH_SHORT)
+                .show()
         }
     }
-
-
 }
-
-//IF THE ID WILL STILL REMAIN THE SAME
-/*private fun deleterec(){
-    try {
-        val recnum = txtrecno.text.toString()
-        val db = openOrCreateDatabase("dbaseprod", Context.MODE_PRIVATE, null)
-
-        val mysql = "delete from tblproduct where id = ?"
-        val statement: SQLiteStatement = db.compileStatement(mysql)
-        statement.bindString(1, recnum)
-        statement.execute()
-
-        Toast.makeText(applicationContext, "Record Deleted Successfully", Toast.LENGTH_SHORT).show()
-        finish()
-        val intentback = Intent(applicationContext, view::class.java)
-        startActivity(intentback)
-    }
-    catch (exception: Exception) {
-        Toast.makeText(applicationContext, "Record Deleted Unsuccessfully", Toast.LENGTH_SHORT).show()
-    }
-}
- */
-
-/*
-
-    private fun deleterec() {
-        try {
-            val recnum = txtrecno.text.toString().toInt()
-            val db = openOrCreateDatabase("dbaseprod", Context.MODE_PRIVATE, null)
-
-            // Delete the record
-            val deleteSql = "DELETE FROM tblproduct WHERE id = ?"
-            val deleteStatement: SQLiteStatement = db.compileStatement(deleteSql)
-            deleteStatement.bindLong(1, recnum.toLong())
-            deleteStatement.execute()
-
-            // Update the IDs of the remaining records
-            val updateSql = "UPDATE tblproduct SET id = id - 1 WHERE id > ?"
-            val updateStatement: SQLiteStatement = db.compileStatement(updateSql)
-            updateStatement.bindLong(1, recnum.toLong())
-            updateStatement.execute()
-
-            Toast.makeText(applicationContext, "Record Deleted Successfully", Toast.LENGTH_SHORT).show()
-            finish()
-            val intentback = Intent(applicationContext, view::class.java)
-            startActivity(intentback)
-        } catch (exception: Exception) {
-            Toast.makeText(applicationContext, "Record Deleted Unsuccessfully", Toast.LENGTH_SHORT).show()
-        }
-    }
-*/

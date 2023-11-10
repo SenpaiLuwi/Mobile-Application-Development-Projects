@@ -5,8 +5,15 @@
     <string name="NameProd">Name of Product</string>
     <string name="Price">Price</string>
 
+    <string name="RadioFoodsBtn">FOODS</string>
+    <string name="RadioDrinksBtn">DRINKS</string>
+    <string name="RadioOtherBtn">OTHER</string>
+
     <string name="AddBtn">ADD</string>
-    <string name="ViewBtn">VIEW</string>
+    <string name="ViewBtn">VIEW ALL PRODUCTS</string>
+    <string name="FoodsBtn">VIEW ALL FOODS</string>
+    <string name="DrinksBtn">VIEW ALL DRINKS</string>
+    <string name="OtherBtn">VIEW ALL OTHER</string>
 
     <string name="EditDelete">EDIT / DELETE</string>
     <string name="EditBtn">EDIT</string>

@@ -19,11 +19,20 @@ class view : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view)
+
         val db: SQLiteDatabase = openOrCreateDatabase("dbaseprod", Context.MODE_PRIVATE, null)
 
         viewList = findViewById(R.id.list_id)
 
-        val tmptable: Cursor = db.rawQuery("select * from tblproduct order by f_prodname", null)
+        val category = intent.getStringExtra("category")
+
+        val query = if (category != null) {
+            "SELECT * FROM tblproduct WHERE f_category = ? ORDER BY f_prodname"
+        } else {
+            "SELECT * FROM tblproduct ORDER BY f_prodname"
+        }
+
+        val tmptable: Cursor = db.rawQuery(query, if (category != null) arrayOf(category) else null)
         val id: Int = tmptable.getColumnIndex("id")
         val prodname: Int = tmptable.getColumnIndex("f_prodname")
         val prodprice: Int = tmptable.getColumnIndex("f_prodprice")
@@ -42,9 +51,8 @@ class view : AppCompatActivity() {
                 prod.productprice = tmptable.getString(prodprice)
                 productdetails.add(prod)
 
-                productlist.add("(${tmptable.getString(id)})\t\t\t${tmptable.getString(prodname)}\t\t\t\t\t₱${tmptable.getString(prodprice)}")
-            }
-            while (tmptable.moveToNext())
+                productlist.add("${tmptable.getString(prodname)}\t\t\t\t\t₱${tmptable.getString(prodprice)}")
+            } while (tmptable.moveToNext())
             prodListAdapter.notifyDataSetChanged()
             viewList.invalidateViews()
         }
@@ -59,6 +67,5 @@ class view : AppCompatActivity() {
             finish()
             startActivity(i_edel)
         }
-
     }
 }

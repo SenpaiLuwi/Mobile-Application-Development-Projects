@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgone"
+    android:foregroundTint="#FFFFFF"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -24,7 +25,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="70dp" />
 
     <EditText
         android:id="@+id/product_id"
@@ -35,13 +36,13 @@
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="@string/NameProd"
+        android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:importantForAutofill="no" />
+        android:textColorHint="#FFFFFF" />
 
     <Space
         android:layout_width="match_parent"
@@ -56,17 +57,54 @@
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="@string/Price"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:importantForAutofill="no" />
+        android:textColorHint="#FFFFFF" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <RadioButton
+            android:id="@+id/radioFoodBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/RadioFoodsBtn"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/radioDrinkBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioDrinksBtn"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/radioOtherBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioOtherBtn"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <Button
         android:id="@+id/btn_add_id"
@@ -91,6 +129,51 @@
         android:layout_marginEnd="80dp"
         android:backgroundTint="#FFFFFF"
         android:text="@string/ViewBtn"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/btn_food_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/FoodsBtn"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/btn_drink_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/DrinksBtn"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/btn_other_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/OtherBtn"
         android:textColor="#000000"
         android:textStyle="bold" />
 </LinearLayout>
