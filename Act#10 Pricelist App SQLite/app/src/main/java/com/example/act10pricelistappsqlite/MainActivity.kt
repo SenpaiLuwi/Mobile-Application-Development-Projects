@@ -1,7 +1,7 @@
 package com.example.act10pricelistappsqlite
+
 import android.content.Context
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteStatement
 import android.os.Bundle
 import android.widget.Button
@@ -53,9 +53,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnadd.setOnClickListener {
-            if (!radioFoodBtn.isChecked && !radioDrinkBtn.isChecked && !radioOtherBtn.isChecked) {
-                Toast.makeText(applicationContext, "Please Validate the Category on the Buttons and Text", Toast.LENGTH_SHORT).show()
-            } else {
+            val productName = prodname.text.toString().trim()
+            val productPrice = prodprice.text.toString().trim()
+
+            if(productName.isEmpty() || productPrice.isEmpty()){
+            Toast.makeText(applicationContext, "Please Input All the Fields", Toast.LENGTH_SHORT).show()
+            }
+
+            else if ((!radioFoodBtn.isChecked && !radioDrinkBtn.isChecked && !radioOtherBtn.isChecked)) {
+                Toast.makeText(applicationContext, "Please Validate the Category", Toast.LENGTH_SHORT).show()
+            }
+
+            else {
                 val category = when {
                     radioFoodBtn.isChecked -> "Food"
                     radioDrinkBtn.isChecked -> "Drink"
@@ -98,7 +107,6 @@ class MainActivity : AppCompatActivity() {
         val nameofprods = prodname.text.toString()
         val priceofprods = prodprice.text.toString()
 
-        if (nameofprods.isNotEmpty() && priceofprods.isNotEmpty()) {
             try {
                 val db = openOrCreateDatabase("dbaseprod", Context.MODE_PRIVATE, null)
                 db.execSQL("CREATE TABLE IF NOT EXISTS tblproduct(id INTEGER PRIMARY KEY AUTOINCREMENT,f_prodname VARCHAR, f_prodprice VARCHAR, f_category VARCHAR)")
@@ -117,9 +125,6 @@ class MainActivity : AppCompatActivity() {
             } catch (exception: Exception) {
                 Toast.makeText(applicationContext, "Record Added Unsuccessfully", Toast.LENGTH_SHORT).show()
             }
-        } else {
-            Toast.makeText(applicationContext, "Please Input all the Fields", Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun viewCategory(category: String) {

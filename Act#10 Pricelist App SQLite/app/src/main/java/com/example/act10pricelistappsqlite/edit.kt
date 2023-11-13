@@ -18,8 +18,6 @@ class edit : AppCompatActivity() {
     private lateinit var presyo: EditText
     private lateinit var editbutton: Button
     private lateinit var deletebutton: Button
-    private var originalName = ""
-    private var originalPrice = ""
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +38,6 @@ class edit : AppCompatActivity() {
         txtrecno.text = col1
         produkto.setText(col2)
         presyo.setText(col3)
-        originalName = produkto.text.toString()
-        originalPrice = presyo.text.toString()
 
         editbutton.setOnClickListener {
             editrec()
@@ -56,7 +52,6 @@ class edit : AppCompatActivity() {
         val newName = produkto.text.toString()
         val newPrice = presyo.text.toString()
 
-        if (newName != originalName || newPrice != originalPrice) {
             if (newName.isNotEmpty() && newPrice.isNotEmpty()) {
                 try {
                     val recnum = txtrecno.text.toString()
@@ -70,34 +65,16 @@ class edit : AppCompatActivity() {
                     statement.execute()
 
                     Toast.makeText(
-                        applicationContext,
-                        "Record Saved Successfully",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                        applicationContext, "Record Saved Successfully", Toast.LENGTH_SHORT).show()
                     finish()
                     val intentback = Intent(applicationContext, MainActivity::class.java)
                     startActivity(intentback)
                 } catch (exception: Exception) {
-                    Toast.makeText(
-                        applicationContext,
-                        "Record Saved Unsuccessfully",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(applicationContext, "Record Saved Unsuccessfully", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(
-                    applicationContext,
-                    "Please Input all the Fields",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(applicationContext, "Please Input all the Fields", Toast.LENGTH_SHORT).show()
             }
-        } else {
-            Toast.makeText(
-                applicationContext,
-                "Please Edit Either the Name or the Price",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
     }
 
 
