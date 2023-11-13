@@ -1,6 +1,7 @@
 package com.example.act10pricelistappsqlite
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteStatement
@@ -101,23 +102,36 @@ class edit : AppCompatActivity() {
 
 
     private fun deleterec() {
-        try {
-            val recnum = txtrecno.text.toString()
-            val db = openOrCreateDatabase("dbaseprod", Context.MODE_PRIVATE, null)
+        val recnum = txtrecno.text.toString()
 
-            val mysql = "delete from tblproduct where id = ?"
-            val statement: SQLiteStatement = db.compileStatement(mysql)
-            statement.bindString(1, recnum)
-            statement.execute()
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirm Deletion")
+        builder.setMessage("Are you sure you want to delete this record?")
 
-            Toast.makeText(applicationContext, "Record Deleted Successfully", Toast.LENGTH_SHORT)
-                .show()
-            finish()
-            val intentback = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intentback)
-        } catch (exception: Exception) {
-            Toast.makeText(applicationContext, "Record Deleted Unsuccessfully", Toast.LENGTH_SHORT)
-                .show()
+        builder.setPositiveButton("Yes") { _, _ ->
+            try {
+                val db = openOrCreateDatabase("dbaseprod", Context.MODE_PRIVATE, null)
+
+                val mysql = "delete from tblproduct where id = ?"
+                val statement: SQLiteStatement = db.compileStatement(mysql)
+                statement.bindString(1, recnum)
+                statement.execute()
+
+                Toast.makeText(applicationContext, "Record Deleted Successfully", Toast.LENGTH_SHORT).show()
+                finish()
+                val intentback = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intentback)
+            } catch (exception: Exception) {
+                Toast.makeText(applicationContext, "Record Deleted Unsuccessfully", Toast.LENGTH_SHORT).show()
+            }
         }
+
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
+
 }
