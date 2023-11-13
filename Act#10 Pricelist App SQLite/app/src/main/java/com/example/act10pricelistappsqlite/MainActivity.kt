@@ -74,18 +74,22 @@ class MainActivity : AppCompatActivity() {
 
         btnFood.setOnClickListener {
             viewCategory("Food")
+            Toast.makeText(applicationContext, "FOOD", Toast.LENGTH_SHORT).show()
         }
 
         btnDrink.setOnClickListener {
             viewCategory("Drink")
+            Toast.makeText(applicationContext, "DRINK", Toast.LENGTH_SHORT).show()
         }
 
         btnOther.setOnClickListener {
             viewCategory("Other")
+            Toast.makeText(applicationContext, "OTHER", Toast.LENGTH_SHORT).show()
         }
 
         btnview.setOnClickListener {
             val intentview = Intent(applicationContext, view::class.java)
+            Toast.makeText(applicationContext, "ALL PRODUCTS", Toast.LENGTH_SHORT).show()
             startActivity(intentview)
         }
     }

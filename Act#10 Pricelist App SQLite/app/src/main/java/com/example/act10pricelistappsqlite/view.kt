@@ -36,9 +36,11 @@ class view : AppCompatActivity() {
         val id: Int = tmptable.getColumnIndex("id")
         val prodname: Int = tmptable.getColumnIndex("f_prodname")
         val prodprice: Int = tmptable.getColumnIndex("f_prodprice")
+        val categories: Int = tmptable.getColumnIndex("f_category")
+
         productlist.clear()
 
-        prodListAdapter = ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, productlist)
+        prodListAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, productlist)
         viewList.adapter = prodListAdapter
 
         val productdetails = ArrayList<product>()
@@ -49,9 +51,11 @@ class view : AppCompatActivity() {
                 prod.refid = tmptable.getString(id)
                 prod.productname = tmptable.getString(prodname)
                 prod.productprice = tmptable.getString(prodprice)
+                prod.categories = tmptable.getString(categories)
                 productdetails.add(prod)
 
-                productlist.add("${tmptable.getString(prodname)}\t\t\t\t\t₱${tmptable.getString(prodprice)}")
+                val formattedProduct = "${tmptable.getString(prodname)} - ₱${tmptable.getString(prodprice)} - ${tmptable.getString(categories)}"
+                productlist.add(formattedProduct)
             } while (tmptable.moveToNext())
             prodListAdapter.notifyDataSetChanged()
             viewList.invalidateViews()
