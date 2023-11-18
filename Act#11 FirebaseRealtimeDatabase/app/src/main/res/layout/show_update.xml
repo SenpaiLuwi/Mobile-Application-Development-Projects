@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ED9ED6">
+
+
+    <TextView
+        android:id="@+id/charUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7071E8"
+        android:fontFamily="@font/cunia"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/UPDATE"
+        android:textColor="#EEF5FF"
+        android:textSize="20sp" />
+
+    <!-- CHARACTER NAME -->
+
+    <!-- CHARACTER NUMBER -->
+
+    <TextView
+        android:id="@+id/CharName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cunia"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:text="@string/NAME"
+        android:textColor="#22092C"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edit_char_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#22092C"
+        android:ems="10"
+        android:fontFamily="@font/cunia"
+        android:hint="@string/NAME"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
+        android:textColor="#22092C"
+        android:textColorHint="#22092C"
+        tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,VisualLintTextFieldSize" />
+
+    <TextView
+        android:id="@+id/charNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cunia"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:text="@string/SUBNAME"
+        android:textColor="#22092C"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edit_char_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#22092C"
+        android:ems="10"
+        android:fontFamily="@font/cunia"
+        android:hint="@string/SUBNAME"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
+        android:textColor="#22092C"
+        android:textColorHint="#22092C"
+        tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,TextFields,VisualLintTextFieldSize" />
+
+    <!-- CHARACTER POWER -->
+    <TextView
+        android:id="@+id/charPower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cunia"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:text="@string/POWER"
+        android:textColor="#22092C"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edit_char_power"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#22092C"
+        android:ems="10"
+        android:fontFamily="@font/cunia"
+        android:hint="@string/POWER"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
+        android:textColor="#22092C"
+        android:textColorHint="#22092C"
+        tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,VisualLintTextFieldSize" />
+
+    <!-- CHARACTER IMGURL -->
+    <TextView
+        android:id="@+id/charImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cunia"
+        android:gravity="center_horizontal"
+        android:paddingBottom="5dp"
+        android:text="@string/IMAGE"
+        android:textColor="#22092C"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edit_char_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#22092C"
+        android:ems="10"
+        android:fontFamily="@font/cunia"
+        android:hint="@string/IMAGE"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
+        android:textColor="#22092C"
+        android:textColorHint="#22092C"
+        tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/btn_id_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#22092C"
+        android:text="@string/CHARUPDATE"
+        android:textColor="#EEF5FF"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+</LinearLayout>

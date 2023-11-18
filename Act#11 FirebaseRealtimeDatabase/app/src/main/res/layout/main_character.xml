@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="40dp"
+    android:elevation="15dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#7071E8">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1_id"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#C683D7"
+            app:civ_border_width="5dp"
+            tools:ignore="ImageContrastCheck" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#ED9ED6"
+            tools:ignore="TextSizeCheck">
+
+            <TextView
+                android:id="@+id/name_char_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/NAME"
+                android:fontFamily="@font/cunia"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/number_char_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/SUBNAME"
+                android:fontFamily="@font/cunia"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/power_char_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/POWER"
+                android:fontFamily="@font/cunia"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img1_id"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="#C683D7"
+                android:textColor="#22092C"
+                android:text="@string/EDIT"
+                android:fontFamily="@font/cunia"/>
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="#C683D7"
+                android:textColor="#22092C"
+                android:text="@string/DELETE"
+                android:fontFamily="@font/cunia"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,20 @@
+<resources>
+<string name="app_name">Act 11 Firebase Realtime Database</string>
+
+<string name="CHARACTER">ANIME CHARACTER</string>
+<string name="UPDATE">CHARACTER UPDATE</string>
+
+<string name="NAME">CHARACTER NAME</string>
+<string name="SUBNAME">CHARACTER NUMBER</string>
+<string name="POWER">CHARACTER POWER</string>
+<string name="IMAGE">CHARACTER IMAGE</string>
+
+<string name="EDIT">EDIT</string>
+<string name="DELETE">DELETE</string>
+
+<string name="SAVE">SAVE</string>
+<string name="CANCEL">CANCEL</string>
+<string name="SEARCH">SEARCH</string>
+
+<string name="CHARUPDATE">UPDATE</string>
+</resources>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "565815975566",
+    "firebase_url": "https://act11firebaserealtimedatabase-default-rtdb.firebaseio.com",
+    "project_id": "act11firebaserealtimedatabase",
+    "storage_bucket": "act11firebaserealtimedatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565815975566:android:9a9916aaa7d9177320b3df",
+        "android_client_info": {
+          "package_name": "com.example.act11firebaserealtimedatabase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPZhd3kMu9Is2gkYm7Npm4kcrgpOM5zvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
