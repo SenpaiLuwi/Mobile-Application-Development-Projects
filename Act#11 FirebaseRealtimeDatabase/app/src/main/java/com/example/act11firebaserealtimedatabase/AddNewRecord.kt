@@ -18,6 +18,7 @@ class AddNewRecord : AppCompatActivity() {
     private lateinit var v_Save: Button
     private lateinit var v_Cancel: Button
 
+    // Start of OnCreate
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_record)
@@ -30,6 +31,7 @@ class AddNewRecord : AppCompatActivity() {
         v_Save = findViewById(R.id.btn_id_save)
         v_Cancel = findViewById(R.id.btn_id_cancel)
 
+        // Save Button
         v_Save.setOnClickListener {
             val name_is = v_Name.text.toString()
             val number_is = v_Number.text.toString()
@@ -45,12 +47,14 @@ class AddNewRecord : AppCompatActivity() {
             }
         }
 
+        // Cancel Button
         v_Cancel.setOnClickListener {
             Toast.makeText(this@AddNewRecord, "CANCEL", Toast.LENGTH_SHORT).show()
             startActivity(Intent(applicationContext, MainActivity::class.java))
         }
     }
 
+    // Insertion of Record
     private fun f_InsertRecord(name_is: String, number_is: String, power_is: String, image_is: String) {
         // HASHMAP
         val dataHashMap = HashMap<String, Any>()
@@ -76,6 +80,7 @@ class AddNewRecord : AppCompatActivity() {
         }
     }
 
+    // Validation of Message
     private fun f_ValidateMsg(info: String) {
         Toast.makeText(this@AddNewRecord, "PLEASE ENTER CHARACTERS $info", Toast.LENGTH_SHORT).show()
     }

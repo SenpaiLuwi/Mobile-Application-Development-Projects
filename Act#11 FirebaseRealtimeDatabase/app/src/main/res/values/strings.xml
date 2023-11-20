@@ -1,5 +1,5 @@
 <resources>
-<string name="app_name">Act 11 Firebase Realtime Database</string>
+<!--<string name="app_name">Act 11 Firebase Realtime Database</string>-->
 
 <string name="CHARACTER">ANIME CHARACTER</string>
 <string name="UPDATE">CHARACTER UPDATE</string>

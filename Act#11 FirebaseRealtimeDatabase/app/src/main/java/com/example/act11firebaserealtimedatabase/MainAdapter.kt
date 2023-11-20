@@ -22,6 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 class MainAdapter(options: FirebaseRecyclerOptions<MainModel>) :
     FirebaseRecyclerAdapter<MainModel, MainAdapter.MyViewHolder>(options) {
 
+    // Holder for the input items to the database to the RecyclerView
     override fun onBindViewHolder(holder: MyViewHolder, position: Int, model: MainModel) {
         holder.name.text = model.B_name
         holder.number.text = model.C_number
@@ -34,6 +35,7 @@ class MainAdapter(options: FirebaseRecyclerOptions<MainModel>) :
             .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
             .into(holder.img)
 
+        // Edit Button
         holder.edit.setOnClickListener {
             Toast.makeText(holder.name.context, "Editing the Character", Toast.LENGTH_SHORT).show()
 
@@ -55,15 +57,16 @@ class MainAdapter(options: FirebaseRecyclerOptions<MainModel>) :
             img.setText(model.E_imageurl)
 
             dialogPlus.show()
+            // Validation
             btnUpdate.setOnClickListener {
                 if (name.text.isEmpty()){
-                    validateMsg("Name", holder.name.context)
+                    validateMsg("NAME", holder.name.context)
                 }else if (bounty.text.isEmpty()){
-                    validateMsg("Bounty", holder.name.context)
+                    validateMsg("NUMBER", holder.name.context)
                 }else if (power.text.isEmpty()){
-                    validateMsg("Power", holder.name.context)
+                    validateMsg("POWER", holder.name.context)
                 }else if (img.text.isEmpty()){
-                    validateMsg("Picture", holder.name.context)
+                    validateMsg("IMAGE URL", holder.name.context)
                 }else{
                     val map = HashMap<String, Any>()
                     map["B_name"] = name.text.toString()
@@ -71,6 +74,7 @@ class MainAdapter(options: FirebaseRecyclerOptions<MainModel>) :
                     map["D_power"] = power.text.toString()
                     map["E_imageurl"] = img.text.toString()
 
+                    //Get the user items and save it to the database
                     FirebaseDatabase.getInstance().reference.child("values")
                         .child(getRef(position).key!!).updateChildren(map)
                         .addOnSuccessListener {
@@ -85,15 +89,23 @@ class MainAdapter(options: FirebaseRecyclerOptions<MainModel>) :
             }
         }
 
+        // Delete Button
         holder.delete.setOnClickListener {
             Toast.makeText(holder.name.context, "Deleting the Character", Toast.LENGTH_SHORT).show()
+
+            // Start of Text Dialog
             val builder = AlertDialog.Builder(holder.name.context)
             builder.setTitle("Attention")
             builder.setMessage("Are you sure you want to delete this record?")
+
+            // Yes Button
             builder.setPositiveButton("Yes"){ _, _ ->
+                Toast.makeText(holder.name.context, "The Character is Deleted!", Toast.LENGTH_SHORT).show()
                 FirebaseDatabase.getInstance().reference.child("values")
                     .child(getRef(position).key!!).removeValue()
             }
+
+            // No Button
             builder.setNegativeButton("No"){ dialog, _ ->
                 Toast.makeText(holder.name.context, "Cancelled", Toast.LENGTH_SHORT).show()
                 dialog.cancel()
@@ -103,11 +115,13 @@ class MainAdapter(options: FirebaseRecyclerOptions<MainModel>) :
     }
 
 
+    // Gets the Items on Main_Character
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.main_character, parent, false)
         return MyViewHolder(view)
     }
 
+    // Class for MyViewHolder
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var img: CircleImageView = itemView.findViewById(R.id.img1_id)
         var name: TextView = itemView.findViewById(R.id.name_char_id)
@@ -117,6 +131,7 @@ class MainAdapter(options: FirebaseRecyclerOptions<MainModel>) :
         var delete: Button = itemView.findViewById(R.id.btn_delete)
     }
 
+    // User Input Validation
     private fun validateMsg(field: String, context: Context?) {
         Toast.makeText(context,"Please enter the Characters $field", Toast.LENGTH_SHORT).show()
     }

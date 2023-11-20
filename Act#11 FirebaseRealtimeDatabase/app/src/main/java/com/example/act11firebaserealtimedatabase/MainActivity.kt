@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var v_recyclerView: RecyclerView
     private lateinit var v_mainAdapter: MainAdapter
 
+    // Starting of On Create
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,33 +36,39 @@ class MainActivity : AppCompatActivity() {
         v_mainAdapter = MainAdapter(options)
         v_recyclerView.adapter = v_mainAdapter
 
+        // Add A Character
         v_FloatingActionButton.setOnClickListener {
             Toast.makeText(this@MainActivity, "ADD A CHARACTER!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(applicationContext, AddNewRecord::class.java))
         }
     }
 
+    // On Start
     override fun onStart() {
         super.onStart()
         v_mainAdapter.startListening()
     }
 
+    // On Stop
     override fun onStop() {
         super.onStop()
         v_mainAdapter.stopListening()
     }
 
+    // onCreateOptionsMenu for the Search Item
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.search, menu)
         val item: MenuItem = menu!!.findItem(R.id.search)
         val searchView = item.actionView as SearchView
 
+        // onQueryTextSubmit
         searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 txtSearch(query)
                 return false
             }
 
+            // onQueryTextChange
             override fun onQueryTextChange(query: String?): Boolean {
                 txtSearch(query)
                 return false
@@ -71,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    // TxtSearch will be the Validation for the Search View
     private fun txtSearch(str:String?){
         val options: FirebaseRecyclerOptions<MainModel> = FirebaseRecyclerOptions.Builder<MainModel>()
             .setQuery(FirebaseDatabase.getInstance().reference.child("values").orderByChild("B_name").startAt(str).endAt("$str~"), MainModel::class.java)
