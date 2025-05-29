@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleTxt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/Title"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SongOne"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius"
+        android:padding="10dp"
+        android:text="@string/song_one"
+        android:textColor="#9DF1DF"
+        android:textSize="16sp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SongTwo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius"
+        android:padding="10dp"
+        android:text="@string/song_two"
+        android:textColor="#9DF1DF"
+        android:textSize="16sp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SongThree"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius"
+        android:padding="10dp"
+        android:text="@string/song_three"
+        android:textColor="#9DF1DF"
+        android:textSize="16sp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.50" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SongFour"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius"
+        android:padding="10dp"
+        android:text="@string/song_four"
+        android:textColor="#9DF1DF"
+        android:textSize="16sp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SongFive"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius"
+        android:padding="10dp"
+        android:text="@string/song_five"
+        android:textColor="#9DF1DF"
+        android:textSize="16sp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.80" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
