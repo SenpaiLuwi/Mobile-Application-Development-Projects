@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Simple Login Screen</string>
+    <string name="login_text">LOGIN</string>
+    <string name="username_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="forgot_text">Forgot Password</string>
+    <string name="Credits">Programmed by: John Louie Ubias | 2 BSIT-2</string>
+</resources>
