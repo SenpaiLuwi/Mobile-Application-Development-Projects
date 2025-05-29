@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Music Player</string>
+
+    <string name="Title">Music Player By: John Louie Ubias</string>
+
+    <string name="song_one">Long Drives - Boy With Uke</string>
+    <string name="song_two">Sparks - Coldplay</string>
+    <string name="song_three">Catriona - Matthaios</string>
+    <string name="song_four">Crash Adams - Give Me A Kiss </string>
+    <string name="song_five">Disero and Josh Bogert - Sit Like a Flamingo</string>
+
+    <string name="song_play">Play</string>
+    <string name="song_pause">Pause</string>
+    <string name="song_stop">Stop</string>
+
+</resources>
