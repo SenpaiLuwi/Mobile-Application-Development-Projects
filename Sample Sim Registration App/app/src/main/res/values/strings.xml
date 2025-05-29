@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sim Registration App</string>
+
+    <string name="myName">Sim Registration App by: John Louie Ubias</string>
+
+    <string name="Name">Name</string>
+    <string name="number">Contact Number</string>
+    <string name="simNet">Sim Network</string>
+    <string name="Address">Address</string>
+
+    <string name="Register">Register</string>
+</resources>
