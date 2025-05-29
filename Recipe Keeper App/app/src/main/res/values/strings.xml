@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Recipe Keeper Ubias, John Louie M.</string>
+    <string name="text_title">Recipe Keeper by John Louie Ubias</string>
+
+    <string name="btnAddRecipe">Add Recipe Name</string>
+    <string name="btnAddIngredients">Add Ingredients</string>
+    <string name="btnAddInstructions">Add Instructions</string>
+
+    <string name="edtRecipeName">Enter Recipe Name</string>
+    <string name="edtIngredients">Enter Ingredients</string>
+    <string name="edtInstructions">Enter Instructions</string>
+    <string name="edtRecipeArea">Recipe Info</string>
+
+    <string name="btnSaveRecipe">Save Recipe</string>
+    <string name="btnClear">Clear All</string>
+</resources>
